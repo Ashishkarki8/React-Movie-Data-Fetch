@@ -1,0 +1,102 @@
+export default function StarRating() {
+  return (
+    <div>
+      <div>
+        {Array.from({ length: 5 }, (_, i) => (
+          <span>S{i + 1}</span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// oR easy way with CORRECT printing
+export default  function StarRating2() {
+  
+  const createStar = (_, i) => {
+    console.log(`Creating Star ${i + 1}`);
+    return <span key={i}>S{i + 1}</span>;
+  };
+
+  const starsArray = Array.from({ length: 5 }, createStar);
+
+  console.log(starsArray);
+
+  return (
+    <div>
+      <div>
+        {starsArray}
+      </div>
+    </div>
+  );
+}
+
+//or slightly HandleRating
+// export default function StarRating() {
+//   const createStar = (_, i) => {
+//     console.log(_); //undefined aaucha
+//     console.log(i);
+//     console.log(`Creating Star ${i + 1}`);
+    
+//     return <span key={i}>S{i + 1}</span>;
+//   };
+// //note length euta property ho so teslai use garda use garda kheri always}
+//   return (
+//     <div>
+//       <div> 
+//         {Array.from({ length: 5 }, createStar)   //from method lai  call bhaho means pasiing value as argument in from method
+//         }  
+        
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+//complex which we can try using two return while teaching or learning code from udemy
+// export default function StarRating() {
+//   return (
+//     <div>
+//       <div>
+//         {Array.from(
+//           { length: 5 },
+//           (_, i) => {
+//             console.log(i);
+//             console.log(Array);
+//             return ( // Added parentheses here
+//               <div key={i}>
+//                 <span>S{i + 1}</span>
+//                 <h1>Hello, World!</h1>
+//               </div>
+//             );
+//           }
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+// and more hard to print array
+// export default function StarRating() {
+//   const starsArray = Array.from({ length: 5 }, (_, i) => (
+//     <span key={i}>S{i + 1}</span>
+//   )); //bhitra bhako sab print huncha
+//   console.log("I am ashish"); //mathi method sakkesi yo print huncha
+//   console.log(
+//     "Original Array:",
+//     Array.from({ length: 5 }, (_, i) => i)
+//   ); //Arry ho sabbai ekkaichoti print huncha
+//   console.log("Newly Created Array:", starsArray); //Array nai ho jasley element reprint haneko cha so
+//   return (
+//     <div>
+//       <div>{starsArray}</div>
+//     </div>
+//   );
+// }
